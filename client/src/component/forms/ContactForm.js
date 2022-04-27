@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Paper, TextField, Typography, Button, IconButton } from '@mui/material';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';import useStyles from './styles';
+import HighlightOffIcon from '@mui/icons-material/HighlightOff';
+import useStyles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { loadServer, updateContact } from '../../redux/actions';
@@ -64,45 +65,51 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
             <IconButton
                 onClick={currentId ? closeEdit : closeAd}
-                className={classes.xButton} type='submit'>
+                style={{
+                    position: 'absolute',
+                    right: '0em',        
+                    color: 'red',
+                }} type='submit'>
                 <HighlightOffIcon fontSize='medium' />
             </IconButton>
 
-            <form autoComplete='off' noValidate onSubmit={handleSubmit}>
+            <form style={{textAlign:'center'}} autoComplete='off' noValidate onSubmit={handleSubmit}>
                 <div >                    
-                    <Typography className={classes.header}>{!currentId ? 'Add New Contact' :'Edit Contact'}</Typography>
-                    <TextField className={classes.form} size='small'
+                    <Typography style={{
+                        fontSize: '1rem',
+                        fontWeight: 'bold',                        
+                        margin: '1em',
+                        textAlign: 'center'
+                    }}>
+                        {!currentId ? 'Add New Contact' : 'Edit Contact'}</Typography>
+                    <TextField style={{marginBottom: '2rem', width: '70%'}} size='small'
                         name='name'
                         label='Name'
-                        variant='outlined'
-                        fullWidth
+                        variant='outlined'                            
                         value={postData.name}
                         onChange={handleChange}
                     />                    
-                    <TextField className={classes.form} size='small'
+                    <TextField style={{marginBottom: '2rem', width: '70%'}} size='small'
                         name='email'
                         label='Email'
-                        variant='outlined'
-                        fullWidth
+                        variant='outlined'                        
                         value={postData.email}
                         onChange={handleChange}
                     />
-                    <TextField className={classes.form} size='small'
+                    <TextField style={{marginBottom: '1rem', width: '70%'}} size='small'
                         name='phone'
                         label='Phone'
-                        variant='outlined'
-                        fullWidth
+                        variant='outlined'                       
                         value={postData.phone}
                         onChange={handleChange}
                     />                   
                 </div>
 
-                <Button className={classes.button}
+                <Button style={{marginTop: '4%', width:'70%' }}
                     variant='contained'
                     color='primary'
                     type='sumbit'
-                    size='small'
-                    fullWidth                    
+                    size='small'                                        
                     > Sumbit
                 </Button>
 

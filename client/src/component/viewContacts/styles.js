@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 export default makeStyles((theme) => ({
    
@@ -13,8 +13,7 @@ export default makeStyles((theme) => ({
         fontWeight: 'bold',
         marginLeft: '3%',
        
-    },
-   
+    },   
    
     name: {
         fontSize: '0.7rem',

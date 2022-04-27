@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 
 
 export default makeStyles((theme) => ({
@@ -8,22 +8,10 @@ export default makeStyles((theme) => ({
         left: '50%',
         transform: 'translate(-50%, -50%)',
         height: '20rem',
-        width: '23rem',
-       
-    },
-    
-    header: {
-        fontSize: '0.9rem',
-        fontWeight: 'bold',
-        marginLeft: '30%',
-        margin: '1em'       
-    },
-    form: {
-        marginBottom: '.8rem',        
-    },      
-    button: {
-        marginTop: '4%',       
-    },
+        width: '23rem',               
+    },    
+           
+  
     xButton: {
         position: 'absolute',
         right: '0em',        
