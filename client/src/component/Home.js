@@ -1,6 +1,9 @@
 import React from 'react';
+import initialContacts from '../db';
 
-const Home = () => {    
+const Home = () => {  
+  
+  console.log(initialContacts);
    
     return (
         <div style={{display: 'flex', justifyContent: 'center'}} >
