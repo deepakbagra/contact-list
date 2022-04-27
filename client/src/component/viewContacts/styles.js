@@ -5,7 +5,7 @@ export default makeStyles((theme) => ({
     card: {
         width: '80%',
         margin: 'auto',
-        
+        marginBottom: '2em'
     },
    
     item: {

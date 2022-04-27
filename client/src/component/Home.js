@@ -5,6 +5,7 @@ import { Button } from '@mui/material';
 import initialContacts from '../db';
 import { loadServer, listContacts } from '../redux/actions';
 import Contacts from '../component/viewContacts/Contacts';
+import Footer from './footer/Footer';
 
 const Home = () => {  
   
@@ -46,6 +47,7 @@ const Home = () => {
           <hr style={{marginTop: '4em'}}></hr>
         </div>        
         <Contacts />
+        <Footer />
       </div>
   );
 };

@@ -31,7 +31,7 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
     // clear form data 
     const clear = () => {
-        setPostData({ item: '', detail: '', price: '', file: '' });        
+        setPostData({ name: '', email: '', phone: '' });        
     }
 
     // handle input data entry
@@ -70,7 +70,7 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
             <form autoComplete='off' noValidate onSubmit={handleSubmit}>
                 <div >                    
-                    <Typography className={classes.header}>{!currentId ? 'Create new Ad' :'Edit your Ad'}</Typography>
+                    <Typography className={classes.header}>{!currentId ? 'Add New Contact' :'Edit Contact'}</Typography>
                     <TextField className={classes.form} size='small'
                         name='name'
                         label='Name'

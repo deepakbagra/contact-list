@@ -11,7 +11,7 @@ const Contacts = () => {
  
   return (
     !contacts?.length ? <div style={{height: '24rem'}}><CircularProgress /> </div> : (
-      <Grid container alignItems='stretch' spacing={5} style={{background: 'skyBlue'}} >
+      <Grid container alignItems='stretch' spacing={5} style={{background: '#607d8b'}} >
               {contacts.map((contact) => (
                   <Grid item
                        key={contact._id}
