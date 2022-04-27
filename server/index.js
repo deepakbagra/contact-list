@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import routes from './routes.js'
 
 const ENDPOINT = "http://localhost:3000";
 
@@ -19,6 +20,9 @@ app.use(cors());
 app.get('/', (req, res) => {
     res.send('Hello to contact API');
 })
+
+// 
+app.use('/contacts', routes);
 
 // set-up mongodb data base
 const PORT = process.env.PORT || 9000;

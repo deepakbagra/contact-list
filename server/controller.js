@@ -12,9 +12,11 @@ export const getContacts = async (req, res) => {
 }
 
 export const loadServer = async (req, res) => {    
-    const post = req.body;
+    const data = req.body;
+
+    console.log(data)
     
-    const initialContacts = new Contacts(post);
+    const initialContacts = new Contacts(data);
    
     try {
         await initialContacts.save();
