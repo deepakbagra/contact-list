@@ -10,7 +10,10 @@ const contactReducers = (contacts=[], action) => {
         
         case Actions.UPDATE:
             return contacts.map(
-                contact => contact._id === action.payload._id ? action.payload : contact);  
+                contact => contact._id === action.payload._id ? action.payload : contact); 
+        
+        case Actions.DELETE:
+            return contacts.filter(post => post._id !== action.payload);
         
         default :
         return contacts;

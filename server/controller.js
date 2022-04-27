@@ -42,3 +42,13 @@ export const updateContact = async (req, res) => {
    
     res.json(updatedContact);    
 }
+
+export const deleteContact = async (req, res) => { 
+    const id = req.params.id;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send('No contact with this id');
+
+    await Contacts.findByIdAndRemove(id);
+
+    res.json({ message: 'Contact deleted successfully' });    
+}

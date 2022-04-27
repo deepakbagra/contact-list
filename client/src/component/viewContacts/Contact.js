@@ -7,13 +7,13 @@ import { useDispatch } from 'react-redux';
 import useStyles from './styles';
 import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 
 import ContactForm from '../forms/ContactForm';
-import { updateContact } from '../../redux/actions';
+import { deleteContact } from '../../redux/actions';
 
-const Contact = ({ contact }) => {
+const Contact = ({ contact }) => {  
   
-  const [modalOpen, setModalOpen] = useState(false);
   const [modalOpenEdit, setModalOpenEdit] = useState(false);
  
   const classes = useStyles();
@@ -48,13 +48,21 @@ const Contact = ({ contact }) => {
           
         </CardContent>
             
-        <CardActions className={classes.actions} >
-                
-            <div>                         
+        <CardActions className={classes.actions} >                
+                               
                 <Button className={classes.btn} onClick={handleEditChange}>
-                    <EditIcon className={classes.btn} onClick={handleModalOpenEdit} />
+                        <EditIcon
+                            className={classes.btn}
+                            onClick={handleModalOpenEdit}
+                        />
+                </Button>           
+                
+                <Button className={classes.btn}
+                    color='secondary'
+                    onClick={() => dispatch(deleteContact(contact._id))}
+                >
+                    <DeleteIcon className={classes.btn} />
                 </Button>
-            </div>
                 
             <Modal className={classes.modal} open={modalOpenEdit} onClose={handleModalCloseEdit}>
             <>             

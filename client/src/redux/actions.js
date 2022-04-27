@@ -48,3 +48,17 @@ export const updateContact = (id, contact) => async (dispatch) => {
         console.log(error);   
     }
 }
+
+export const deleteContact = (id) => async (dispatch) => {    
+    try {
+        
+        await api.deleteContact(id);
+
+        dispatch({
+            type: Actions.DELETE,
+            payload: id
+        })
+    } catch (error) {
+        console.log(error);
+    }
+}

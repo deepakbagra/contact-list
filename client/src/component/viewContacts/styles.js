@@ -42,6 +42,10 @@ export default makeStyles((theme) => ({
     btn: {
         fontSize: '1.3rem',
         
-    },   
+    }, 
+    actions: {
+        height: '3rem',
+        justifyContent: 'center'
+    },
 
 }))

@@ -1,5 +1,5 @@
 import express from 'express';
-import { loadServer, getContacts, updateContact } from './controller.js';
+import { loadServer, getContacts, updateContact, deleteContact } from './controller.js';
 
 const router = express.Router();
 
@@ -8,5 +8,6 @@ const router = express.Router();
 router.get('/', getContacts);
 router.post('/', loadServer);
 router.patch('/:id', updateContact);
+router.delete('/:id', deleteContact);
 
 export default router;
