@@ -1,0 +1,2 @@
+export const LOAD_SERVER = 'LOAD_SERVER';
+export const LIST_CONTACTS = 'LIST_CONTACTS';
