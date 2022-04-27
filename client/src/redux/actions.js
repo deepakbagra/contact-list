@@ -32,3 +32,19 @@ export const loadServer = (initialData) => async (dispatch) => {
         console.log(error);
     }
 }
+
+export const updateContact = (id, contact) => async (dispatch) => {
+    try {
+        
+        const { data } = await api.updateContact(id, contact);
+
+        console.log('update action', data)
+       
+        dispatch({
+            type: Actions.UPDATE,
+            payload: data
+        });
+    } catch (error) {
+        console.log(error);   
+    }
+}

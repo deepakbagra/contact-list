@@ -9,6 +9,7 @@ import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 
 import ContactForm from '../forms/ContactForm';
+import { updateContact } from '../../redux/actions';
 
 const Contact = ({ contact }) => {
   
@@ -23,8 +24,8 @@ const Contact = ({ contact }) => {
   const handleModalCloseEdit = () => { setModalOpenEdit(false) };  
  
  // on click edit button event listener function
-  const handleEditChange = () => {
-   
+ const handleEditChange = () => {
+    dispatch({ type: 'CURRENT_ID', payload: contact._id})
   }
  
     return (

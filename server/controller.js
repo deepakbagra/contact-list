@@ -29,3 +29,16 @@ export const loadServer = async (req, res) => {
         res.status(404).json( {message: error.message});
     }
 }
+
+export const updateContact = async (req, res) => {   
+    const contact = req.body; 
+
+    console.log('contact body for update', contact);
+    const { id: _id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(_id)) return res.status(404).send('No contact with this id');
+    
+    const updatedContact = await Contacts.findByIdAndUpdate(_id, contact, { new: true });
+   
+    res.json(updatedContact);    
+}

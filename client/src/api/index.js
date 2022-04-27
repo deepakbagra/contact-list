@@ -11,3 +11,4 @@ const API = axios.create({ baseURL: url});
 
 export const listContacts = () => API.get('/contacts');
 export const loadServer = (initialData) => API.post('/contacts', initialData);
+export const updateContact = (id, newContact) => API.patch(`/contacts/${id}`, newContact);

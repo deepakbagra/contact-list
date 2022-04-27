@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux';
-import contacts from './reducers';
+import contacts from './Contactreducers';
+import currentId from './currentIdReducer';
 
-export default combineReducers({ contacts });
+export default combineReducers({ contacts, currentId });
