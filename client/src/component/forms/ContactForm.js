@@ -1,9 +1,11 @@
+// impored libraries
 import React, { useState, useEffect } from 'react';
 import { Paper, TextField, Typography, Button, IconButton } from '@mui/material';
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import useStyles from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 
+// imported local modules
 import { loadServer, updateContact } from '../../redux/actions';
 
 const ContactForm = ({ closeEdit, closeAd }) => {
@@ -49,7 +51,8 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
         // if there is no current id, load server with new data
         if (!currentId) {  
-            dispatch(loadServer(postData));   
+            dispatch(loadServer(postData));
+            alert('New contact has been added.');
             clear();
         }
         

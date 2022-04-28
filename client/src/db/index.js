@@ -1,3 +1,6 @@
+/* constructing local data with fake contact list
+   this will be stored into MongoDb database through axios post API */
+
 const contacts = 
    [
       {
