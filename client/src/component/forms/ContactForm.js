@@ -1,3 +1,8 @@
+/**
+ This form component is smartly used
+ for both add contact and edit contact
+ */
+
 // impored libraries
 import React, { useState, useEffect } from 'react';
 import { Paper, TextField, Typography, Button, IconButton } from '@mui/material';
@@ -7,6 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // imported local modules
 import { loadServer, updateContact } from '../../redux/actions';
+
 
 const ContactForm = ({ closeEdit, closeAd }) => {
     
@@ -22,11 +28,12 @@ const ContactForm = ({ closeEdit, closeAd }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
 
+
     // calling current contact from redux store
     const contact = useSelector(
         (state) => currentId ? state.contacts.find(
             (contact) => contact._id === currentId) : null);      
-     
+        
     // update form data when a current contact is selected
     useEffect(() => { 
     if (contact) setPostData(contact);
@@ -34,7 +41,7 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
     // clear form data 
     const clear = () => {
-        setPostData({ name: '', email: '', phone: '' });        
+        setPostData({ name: '', email: '', phone: '' });
     }
 
     // handle input data entry
@@ -52,17 +59,19 @@ const ContactForm = ({ closeEdit, closeAd }) => {
         // if there is no current id, load server with new data
         if (!currentId) {  
             dispatch(loadServer(postData));            
-            clear();
-        }
-        
+            clear();           
+        }    
         // else update the current contact data
-          else {     
+        else {     
             dispatch(updateContact(currentId, postData));           
             clear();
-          }
+        }
     }
-    
-    return (
+
+        return (
+
+        // rendering form input text boxes for add /edit contact
+            
         <Paper className={classes.paper}>
 
             <IconButton
@@ -117,8 +126,8 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
             </form>
 
-      </Paper>  
-  );
-};
+        </Paper>  
+    );
+}
 
 export default ContactForm;

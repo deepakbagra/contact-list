@@ -1,7 +1,12 @@
-import * as Actions from './constants';
+// **************************  reducers ************************************** //
 
-const contactReducers = (contacts=[], action) => {
-    switch(action.type) {
+import * as Actions from './constants'; // importing all action tyles
+
+// reducer to manage state for contact list
+const contactReducers = (contacts = [], action) => {
+    
+    switch (action.type) {
+        
         case Actions.LIST_CONTACTS:
             return action.payload;
         
@@ -16,9 +21,16 @@ const contactReducers = (contacts=[], action) => {
             return contacts.filter(post => post._id !== action.payload);
         
         case Actions.SEARCH:
-        
-            const filteredContacts = action.payload !== '' ? contacts.filter((contact) =>
-            contact.name?.toLowerCase().includes(action.payload?.toLowerCase())) : contacts;
+             
+            // filtering contacts based on search input 
+            const filteredContacts =
+                action.payload !== '' ?
+                    contacts.filter
+                        ((contact) =>                    
+                            contact.name?.toLowerCase()
+                                .includes(action.payload?.toLowerCase()))
+                    : contacts
+                ;           
             
             if (filteredContacts.length === 0) return [];
             

@@ -1,3 +1,5 @@
+// react main App component to wrap ..
+// .. nav bar, route home page and wrap footer component
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 

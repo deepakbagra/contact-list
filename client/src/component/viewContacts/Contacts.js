@@ -1,7 +1,9 @@
+// importing libraries
 import { useSelector } from 'react-redux';
 import { CircularProgress, Grid } from '@mui/material';
 import React from 'react';
 
+// importing local contact component
 import Contact from './Contact';
 
 const Contacts = () => {
@@ -10,6 +12,8 @@ const Contacts = () => {
   const contacts = useSelector(state => state.contacts);   
  
   return (
+    // iterating over an array of contacts using grid to handle different screen size 
+
     !contacts?.length ? <div style={{height: '24rem'}}><CircularProgress /> </div> : (
       <Grid container alignItems='stretch' spacing={5} style={{background: '#607d8b'}} >
               {contacts.map((contact) => (

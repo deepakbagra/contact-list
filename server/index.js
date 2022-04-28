@@ -19,9 +19,9 @@ dotenv.config();
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors()); // handle cross origin requests
 
-// welcome message
+// welcome message from server
 app.get('/', (req, res) => {
     res.send('Hello to contact API');
 })
@@ -32,6 +32,11 @@ app.use('/contacts', routes);
 // set-up mongodb data base
 const PORT = process.env.PORT || 9000;
 
-mongoose.connect(process.env.CONNECTION_URL, {useNewUrlParser: true, useUnifiedTopology: true})
-    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)) )
+mongoose.connect(
+    
+    process.env.CONNECTION_URL,
+    { useNewUrlParser: true, useUnifiedTopology: true })
+
+    .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
+    
     .catch((error) => console.log(error.message));

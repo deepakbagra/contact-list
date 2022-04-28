@@ -1,8 +1,10 @@
 import * as Actions from "./constants";
 import * as api from '../api';
 
-//Action creators
+// ****************  Action creators ********************************* //
 
+
+// list all contacts 
 export const listContacts = () => async (dispatch) => {
     try {
         const { data } = await api.listContacts();
@@ -18,12 +20,13 @@ export const listContacts = () => async (dispatch) => {
     }
 }
 
+// load contact onto server
 export const loadServer = (initialData) => async (dispatch) => {
     try {
         const { data } = await api.loadServer(initialData);
 
         if (data) {
-            alert('New contact has been addedd.')
+            alert('New contact has been addedd.');            
         }
 
         dispatch({
@@ -35,6 +38,7 @@ export const loadServer = (initialData) => async (dispatch) => {
     }
 }
 
+// edit selected contact
 export const updateContact = (id, contact) => async (dispatch) => {
     try {
         
@@ -53,6 +57,7 @@ export const updateContact = (id, contact) => async (dispatch) => {
     }
 }
 
+// delete selected contact
 export const deleteContact = (id) => async (dispatch) => {    
     try {
         

@@ -1,3 +1,4 @@
+// libraries imported
 import React, { useState } from 'react';
 import { AppBar, Button, Paper } from '@mui/material';
 import { useDispatch } from 'react-redux';
@@ -5,24 +6,31 @@ import Modal from '@mui/material/Modal';
 import SearchBar from './search/SearchBar';
 import useStyles from './search/styles';
 
+// local modules imported
 import ContactForm from './forms/ContactForm';
+
 
 const Navbar = () => {
 
-  const [modalOpen, setModalOpen] = useState(false);
+  // toggle modal state management
+  const [modalOpen, setModalOpen] = useState(false);  
   
-  const classes = useStyles();
+  const classes = useStyles(); // custome style sheet
 
-    // modal toggle handle for new add contact window
-    const handleModalOpen = () => {       
-          setModalOpen(true);
-          dispatch({ type: 'CURRENT_ID', payload: null });
+  const dispatch = useDispatch();
+  
+  // modal toggle handle for new add contact window
+  const handleModalOpen = () => {
+    setModalOpen(true);
+    dispatch({ type: 'CURRENT_ID', payload: null });
     }         
-    const handleModalClose = () => { setModalOpen(false) };
-
-    const dispatch = useDispatch();
+  const handleModalClose = () => {
+    setModalOpen(false);
+  }; 
+  
     
   return (
+    // render nav bar with App title and add new contact action button
       <AppBar
           position='fixed'
           style=
