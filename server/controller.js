@@ -5,14 +5,14 @@ import Contacts from './contactSchema.js';
 
 // fetching contact list from mongo db database
 export const getContacts = async (req, res) => {
-    
+
     try {
         let allContacts = await Contacts.find();
         
         // sorting contact list with names alphabatically
         allContacts.sort((x, y) => {
 
-            // sorting base don first names
+            // sorting based on first names
             if (x.name.split(" ")[0]?.toLowerCase() >
                 y.name.split(" ")[0]?.toLowerCase())                
                 return 1;
