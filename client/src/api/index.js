@@ -1,8 +1,10 @@
 import axios from 'axios';
 
-const url = 'http://localhost:9000';
+// backend end API address as localhost
+//const url = 'http://localhost:9000';
 
-//const url = 'https://hostserver.com';
+// backend API address as web hosted on Heroku
+const url = 'https://deepak-contact-api.herokuapp.com';
 
 const API = axios.create({ baseURL: url});
 
