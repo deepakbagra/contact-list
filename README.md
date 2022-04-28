@@ -10,12 +10,14 @@ Full Stack MERN Application
 - Redux (state container)
 - Material-UI with custom styling
 - JavaScript
+- Hosted on Netlify
 
 ## Backend Framework
 - Node.js
 - Express.js
 - MongoDB Database
 - JavaScript
+- Hosted on Heroku
 
 ## Features
 - Sorting and searching option
