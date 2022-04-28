@@ -1,13 +1,18 @@
+// importing libraries
 import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+
+// importing local modules
 import routes from './routes.js'
 
-const ENDPOINT = "http://localhost:3000";
+// local host end point
+//const ENDPOINT = "http://localhost:3000";
 
-//const ENDPOINT = 'https://abcd.com';
+// web hosting end point
+const ENDPOINT = 'https://mycontact-api.netlify.app/';
 
 const app = express();
 dotenv.config();

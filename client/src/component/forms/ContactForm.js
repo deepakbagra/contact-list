@@ -51,14 +51,13 @@ const ContactForm = ({ closeEdit, closeAd }) => {
 
         // if there is no current id, load server with new data
         if (!currentId) {  
-            dispatch(loadServer(postData));
-            alert('New contact has been added.');
+            dispatch(loadServer(postData));            
             clear();
         }
         
         // else update the current contact data
           else {     
-            dispatch(updateContact(currentId, postData));
+            dispatch(updateContact(currentId, postData));           
             clear();
           }
     }

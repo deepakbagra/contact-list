@@ -22,7 +22,9 @@ export const loadServer = (initialData) => async (dispatch) => {
     try {
         const { data } = await api.loadServer(initialData);
 
-        console.log('load contact action', data )
+        if (data) {
+            alert('New contact has been addedd.')
+        }
 
         dispatch({
             type: Actions.LOAD_SERVER,
@@ -37,8 +39,10 @@ export const updateContact = (id, contact) => async (dispatch) => {
     try {
         
         const { data } = await api.updateContact(id, contact);
-
-        console.log('update action', data)
+       
+        if (data) {
+            alert('The contact has been updated.')
+        }
        
         dispatch({
             type: Actions.UPDATE,
@@ -52,7 +56,11 @@ export const updateContact = (id, contact) => async (dispatch) => {
 export const deleteContact = (id) => async (dispatch) => {    
     try {
         
-        await api.deleteContact(id);
+        const response = await api.deleteContact(id);
+
+        if (response) {
+            alert('The contact has been deleted.');
+        }
 
         dispatch({
             type: Actions.DELETE,
