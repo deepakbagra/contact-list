@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+// importing libraries
+import React, { useState } from 'react';
 import {
   Card, CardActions, CardContent,
   Button, Typography,
@@ -9,11 +10,13 @@ import Modal from '@mui/material/Modal';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 
+// importing local modules
 import ContactForm from '../forms/ContactForm';
 import { deleteContact } from '../../redux/actions';
 
 const Contact = ({ contact }) => {  
   
+    // toggle modal states for edit form
   const [modalOpenEdit, setModalOpenEdit] = useState(false);
  
   const classes = useStyles();
@@ -29,8 +32,12 @@ const Contact = ({ contact }) => {
   }
  
     return (
-    
+        // rendering a single contact as a card
+        // taking props from parent function component(<Contacts>)
+
         <Card className={classes.card}>
+
+            {/* rendering contact name, email and phone numbers as card contents */}
              
             <CardContent>
                 <Typography gutterBottom className={classes.item} >                    
@@ -46,9 +53,11 @@ const Contact = ({ contact }) => {
                     {contact.phone}                    
                 </Typography>                
           
-        </CardContent>
+            </CardContent>
+        
+            {/* action buttons for edit and delete */}
             
-        <CardActions className={classes.actions} >                
+            <CardActions className={classes.actions} >                
                                
                 <Button className={classes.btn} onClick={handleEditChange}>
                         <EditIcon

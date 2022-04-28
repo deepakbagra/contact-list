@@ -1,7 +1,9 @@
+// importing libraries
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '@mui/material';
 
+// importing local modules
 import initialContacts from '../db';
 import { loadServer, listContacts } from '../redux/actions';
 import Contacts from '../component/viewContacts/Contacts';
@@ -31,11 +33,14 @@ const Home = () => {
     }    
   }
   
+  // side effect when list contacts fuction is dispatched
+  // in order to re render contact list from server
   useEffect(() => {
     dispatch(listContacts())
   }, [dispatch])
  
-    return (
+  return (
+      // rendering home page view
       <div style={{ textAlign: 'center' }} >        
         <div>
           <Button
