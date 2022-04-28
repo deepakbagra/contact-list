@@ -9,10 +9,10 @@ import dotenv from 'dotenv';
 import routes from './routes.js'
 
 // local host end point
-//const ENDPOINT = "http://localhost:3000";
+const ENDPOINT = "http://localhost:3000";
 
 // web hosting end point
-const ENDPOINT = 'https://mycontact-api.netlify.app/';
+//const ENDPOINT = 'https://mycontact-api.netlify.app/';
 
 const app = express();
 dotenv.config();
