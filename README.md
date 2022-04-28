@@ -1,6 +1,6 @@
 # Contact List App
 ## About
-This web application facilitates initialsing contacts server with contact list and then listing them to the browser with some features such as editing, deleting and adding a new contact.
+This web application facilitates initialsing contacts server with contact list and then listing them to the browser with added features such as editing, deleting and adding a new contact.
 
 ## App Stack Type
 Full Stack MERN Application
