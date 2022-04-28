@@ -8,11 +8,11 @@ import dotenv from 'dotenv';
 // importing local modules
 import routes from './routes.js'
 
-// local host end point
-const ENDPOINT = "http://localhost:3000";
+// local host end point for dev
+//const ENDPOINT = "http://localhost:3000";
 
 // web hosting end point
-//const ENDPOINT = 'https://mycontact-api.netlify.app/';
+const ENDPOINT = 'https://mycontact-api.netlify.app/';
 
 const app = express();
 dotenv.config();
